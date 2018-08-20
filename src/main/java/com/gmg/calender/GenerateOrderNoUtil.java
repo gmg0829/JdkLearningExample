@@ -18,7 +18,6 @@ public class GenerateOrderNoUtil {
     public static String generate(String payType) {
         long val1 = System.currentTimeMillis() / 1000 - 1000000000;
         String val2 = getFixLengthString(4);
-
         return val1 + payType + val2;
     }
 
