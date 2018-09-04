@@ -5,13 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>ThreadDemo</artifactId>
+    <artifactId>JDK-Learning</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-    <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>17.0</version>
-    </dependency>
+
     </dependencies>
 </project>
