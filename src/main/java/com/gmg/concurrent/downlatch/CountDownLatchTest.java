@@ -1,4 +1,4 @@
-package com.gmg.concurrent;
+package com.gmg.concurrent.downlatch;
 
 import java.util.concurrent.CountDownLatch;
 
