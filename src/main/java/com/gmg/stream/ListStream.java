@@ -14,6 +14,9 @@ ListStream {
      list.add("bbb");
 //     list.stream().forEach(System.out::println);
      List<String> list1=list.stream().filter(str->str.startsWith("aa")).collect(Collectors.toList());
-     list1.stream().forEach(System.out::println);
+     //list1.stream().forEach(System.out::println);
+     String phone = "13123456789";
+     String phoneNumber = phone.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
+     System.out.println(phoneNumber);
 }
 }
