@@ -5,11 +5,15 @@ import java.util.List;
 
 public class LamdbaListCompare {
 	public static void main(String[] args) {
-		  List<Integer> list = new ArrayList<>();
-	        list.add(4);
+		  List<Integer> list = new ArrayList<Integer>(){{
+		  	add(4);
+		  	add(6);
+		  	add(5);
+		  }};
+	       /* list.add(4);
 	        list.add(1);
 	        list.add(3);
-	        list.add(6);
+	        list.add(6);*/
 
 //	        list.sort(new Comparator<Integer>() {
 //	            @Override

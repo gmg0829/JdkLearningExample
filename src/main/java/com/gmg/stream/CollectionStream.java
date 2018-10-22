@@ -9,7 +9,8 @@ public class CollectionStream {
 public static void main(String[] args) {
 	List<String> list=Arrays.asList("a1", "a2", "c3", "c6", "c4");
 	List<Integer> listIn=Arrays.asList(4,2,6);
-    System.out.println(listIn.stream().sorted().collect(Collectors.toList()));
+    System.out.println(list.stream().collect(Collectors.joining(",")));
+    //System.out.println(listIn.stream().sorted().collect(Collectors.toList()));
     //System.out.println(list.stream().filter(str->str.startsWith("a")).collect(Collectors.toList()));
 	//list.stream().filter(str->str.startsWith("a")).map(String::toUpperCase).sorted().forEach(System.out::println);
 	List<String> list1=Arrays.asList("a1", "a2", "c3", "c6", "c4");
