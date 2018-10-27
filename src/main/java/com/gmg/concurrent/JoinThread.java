@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.gmg.thread;
+package com.gmg.concurrent;
 
 /** 
 * @ClassName: JoinThread 
