@@ -3,7 +3,7 @@
  */
 package com.gmg.thread;
 
-/** 
+/**
 * @ClassName: JoinThread 
 * @Description: TODO
 * @author gmg 
