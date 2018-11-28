@@ -20,6 +20,9 @@ public static void main(String[] args) throws UnknownHostException,UnsupportedEn
          // System.out.println("key"+entry.getKey()+"value"+entry.getValue());
 
       }
+      map.forEach((key,value)->{
+            System.out.println("key:"+key+"value:"+value);
+      });
       Set<String> stringSet=map.keySet();
       Iterator<String> stringIterator=stringSet.iterator();
       for(String s:stringSet){
