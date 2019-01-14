@@ -23,6 +23,11 @@ public class CompletableFutureParallel {
         //CompletableFuture 的List
         List<CompletableFuture> futures = new ArrayList<>();
         futures.add(CompletableFuture.runAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             System.out.println("当前任务Customer,线程名字为:" + Thread.currentThread().getName());
         }, THREAD_POOL));
         futures.add(CompletableFuture.runAsync(() -> {
@@ -31,10 +36,12 @@ public class CompletableFutureParallel {
         futures.add( CompletableFuture.runAsync(() -> {
             System.out.println("当前任务Food,线程名字为:" + Thread.currentThread().getName());
         }, THREAD_POOL));
-        futures.add(CompletableFuture.runAsync(() -> {
+        futures.add(CompletableFuture.supplyAsync(() -> {
             System.out.println("当前任务Other,线程名字为:" + Thread.currentThread().getName());
+            return "success";
         }, THREAD_POOL));
         CompletableFuture allDoneFuture = CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]));
+        System.out.println( allDoneFuture.get());
         allDoneFuture.get(10, TimeUnit.SECONDS);
     }
 }
