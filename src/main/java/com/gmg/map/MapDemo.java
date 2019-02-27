@@ -13,10 +13,10 @@ public class MapDemo {
 public static void main(String[] args) throws UnknownHostException,UnsupportedEncodingException {
 
       HashMap<String,String> map=new HashMap<String, String>();
-      map.put("1","11");  
-      map.put("2", "22");  
-      map.put("3", "33");  
-      for (Entry<String,String> entry: map.entrySet()) {  
+      map.put("1","11");
+      map.put("2", "22");
+      map.put("3", "33");
+      for (Entry<String,String> entry: map.entrySet()) {
          // System.out.println("key"+entry.getKey()+"value"+entry.getValue());
 
       }
