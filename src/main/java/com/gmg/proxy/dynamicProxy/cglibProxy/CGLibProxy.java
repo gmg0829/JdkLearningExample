@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  * @Description:
  * @date 2018/9/5  11:30
  */
-public class CGLibProxy implements MethodInterceptor {
+public class    CGLibProxy implements MethodInterceptor {
 
     private Object targetObject;// CGLib需要代理的目标对象
 
