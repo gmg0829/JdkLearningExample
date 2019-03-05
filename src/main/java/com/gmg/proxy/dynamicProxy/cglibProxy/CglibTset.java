@@ -9,7 +9,7 @@ package com.gmg.proxy.dynamicProxy.cglibProxy;
  */
 public class CglibTset {
     public static void main(String[] args) {
-        IUserService iUserService=(IUserService) new CGLibProxy().createProxyObject(new UserServiceImpl());
+        UserServiceImpl iUserService=(UserServiceImpl) new CGLibProxy().createProxyObject(new UserServiceImpl());
         iUserService.add("add");
         iUserService.delete("delete");
     }
