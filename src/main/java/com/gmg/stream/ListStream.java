@@ -25,6 +25,8 @@ ListStream {
              new Apple(120, "red"));
      List<Apple> greenApples2=inventory.stream().filter((Apple apple)->"green".equals(apple.getColor())).collect(Collectors.toList());
      System.out.println(greenApples2);
+     List<Apple> listLimit=inventory.stream().limit(2).skip(1).collect(Collectors.toList());
+     System.out.println(listLimit);
  }
     public static class Apple {
         private int weight = 0;
