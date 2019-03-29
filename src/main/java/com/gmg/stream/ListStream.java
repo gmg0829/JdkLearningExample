@@ -1,8 +1,6 @@
 package com.gmg.stream;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -27,6 +25,8 @@ ListStream {
      System.out.println(greenApples2);
      List<Apple> listLimit=inventory.stream().limit(2).skip(1).collect(Collectors.toList());
      System.out.println(listLimit);
+     //Optional.ofNullable(inventory).orElse(Collections.EMPTY_LIST).stream().map(Apple::getColor).collect(Collectors.toList());
+
  }
     public static class Apple {
         private int weight = 0;
