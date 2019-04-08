@@ -29,8 +29,21 @@ public class ConcurrentHashMapTest {
             map.merge("a", 2L, Long::sum);
             map.merge("b", 1L, Long::sum);
         }
+        //找到第一个出现超过1000次的的单词
         String rs = map.search(1, (k, v) -> v > 1000 ? k : null);
         System.out.println(rs);
+        //遍历所有
+        map.forEach(1, (k, v) -> System.out.println(k + "->" + v));
+        //计算所有值的总和
+        Long sum = map.reduceValues(1, Long::sum);
+        System.out.println(sum);
+        //同forEach一样，你也可以提供一个转换器函数。比如计算长度最长的键
+        Integer maxLength = map.reduceKeys(1,
+                String::length, //转换器
+                Integer::max);	//累加器
+        System.out.println(maxLength);
+
+
     }
 
 
