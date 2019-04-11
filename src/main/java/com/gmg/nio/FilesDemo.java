@@ -2,8 +2,11 @@ package com.gmg.nio;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author gmg
@@ -118,5 +121,30 @@ public class FilesDemo {
         } catch(IOException e){
             e.printStackTrace();
         }
+        // 判断FilesTest.java文件是否为隐藏文件
+        try {
+            System.out.println("FilesTest.java是否为隐藏文件：" + Files.isHidden(Paths.get("Youth.txt")));
+            // 一次性读取Youth.txt文件的所有行
+            List<String> lines = Files.readAllLines(Paths.get("Youth.txt"), Charset.forName("UTF-8"));
+            System.out.println(lines);
+            // 判断指定文件的大小
+            System.out.println("FilesTest.java的大小为：" + Files.size(Paths.get("Youth.txt")));
+            List<String> poem = new ArrayList<>();
+            poem.add("水晶潭底银鱼跃");
+            poem.add("清徐风中碧竿横");
+            // 直接将多个字符串内容写入指定文件中
+            Files.write(Paths.get("pome.txt"), poem, Charset.forName("gbk"));
+            // 使用Java 8新增的Stream API列出当前目录下所有文件和子目录
+            Files.list(Paths.get(".")).forEach(path1 -> System.out.println(path1));
+            // 使用Java 8新增的Stream API读取文件内容
+            Files.lines(Paths.get("Youth.txt"), Charset.forName("UTF-8")).forEach(line -> System.out.println(line));
+            FileStore cStore = Files.getFileStore(Paths.get("C:"));
+            // 判断C盘的总空间，可用空间
+            System.out.println("C:共有空间：" + cStore.getTotalSpace());
+            System.out.println("C:可用空间：" + cStore.getUsableSpace());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
