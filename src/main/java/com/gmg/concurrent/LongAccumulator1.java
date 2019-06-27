@@ -17,6 +17,7 @@ public class LongAccumulator1 {
 
     private static void testAccumulate() {
         LongBinaryOperator op = (x, y) -> 2 * x + y;
+        long z=op.applyAsLong(3,2);
         LongAccumulator accumulator = new LongAccumulator(op, 1L);
 
         ExecutorService executor = Executors.newFixedThreadPool(2);

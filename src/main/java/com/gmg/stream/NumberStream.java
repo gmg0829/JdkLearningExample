@@ -32,6 +32,7 @@ public class NumberStream {
         double average = list.stream().mapToDouble(User::getHeight).average().getAsDouble();
         System.out.println("身高 平均：" + df.format(average));
 
+
     }
     private static class User{
         Integer id;
