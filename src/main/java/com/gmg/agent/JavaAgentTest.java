@@ -18,7 +18,7 @@ import java.nio.file.Paths;
  * java -javaagent:agent.jar -jar main.jar
  */
 public class JavaAgentTest {
-    public static void premain(String args, Instrumentation instrumentation) {
+   /* public static void premain(String args, Instrumentation instrumentation) {
         instrumentation.addTransformer(((loader, className, classBeingRedefined, protectionDomain, classfileBuffer) -> {
             //保存字节码到本地文件
             Path path=Paths.get("classes/"+className+".class");
@@ -29,5 +29,5 @@ public class JavaAgentTest {
             }
             return classfileBuffer;
         }));
-    }
+    }*/
 }
