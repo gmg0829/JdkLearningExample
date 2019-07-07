@@ -1,0 +1,5 @@
+- Interface Flow.Publisher<T>定义了生产数据和控制事件的方法。
+- Interface Flow.Subscriber<T>定义了消费数据和事件的方法。
+- Interface Flow.Subscription 定义了链接Publisher和Subscriber的方法。
+- Interface Flow.Processor<T,R>定义了转换Publisher到Subscriber的方法
+- class SubmissionPublisher<T>是Flow.Publisher<T>的实现，她可以灵活的生产数据，同时与Reactive Stream兼容。
