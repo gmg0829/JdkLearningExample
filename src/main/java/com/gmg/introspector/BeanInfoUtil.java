@@ -5,6 +5,7 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * @author gmg
@@ -23,6 +24,10 @@ public class BeanInfoUtil {
     public static void setPropertyByIntrospector(UserInfo userInfo,String userName)throws Exception{
         BeanInfo beanInfo=Introspector.getBeanInfo(UserInfo.class);
         PropertyDescriptor[] proDescrtptors=beanInfo.getPropertyDescriptors();
+
+        Arrays.stream(proDescrtptors).filter(p -> p.getPropertyType() != Class.class).
+                map(p -> p.getName()).toArray(String[]::new);
+
         if(proDescrtptors!=null&&proDescrtptors.length>0){
             for(PropertyDescriptor propDesc:proDescrtptors){
                 if(propDesc.getName().equals(userName)){
