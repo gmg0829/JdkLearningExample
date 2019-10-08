@@ -1,5 +1,7 @@
 package com.gmg.lamdba;
 
+import java.util.function.Predicate;
+
 public class LamdbaRunnable {
 	static int b=10;
   public static void main(String[] args) {
